@@ -22,6 +22,7 @@ You will now see the ActorGroup on the dashboard.  You can turn it on, off, or s
     1.  **Name**: Give this group a name, typically one that is descriptive of its purpose is best. *example: Fermentation Chamber Sensors, Boil Kettle Sensors*
     2.  **Type**: Select SensorGroup
     3.  **Sensor 1-8**: Select which sensors should be a part of this group. If you are choosing sensors that have different units, the group will register its unit as the same unit that Sensor 1 is using.
-    4.  Click **Add** when done
-    
+    4. **Value**: Select wether the group value should equal the *average*, *minimum*, or *maximum* of the sensors in the group.
+    5.  Click **Add** when done
+
 You will see your SensorGroup on the dashboard with your other sensors readings.  You can assign a sensor group to any device that allows you to select a sensor, so you could use it to get a good overall reading of a large fermentation chamber using multiple sensors spread throughout it, or if you have a large mash tun you could have one sensor near the top, one near the bottom, and then average their readings.
