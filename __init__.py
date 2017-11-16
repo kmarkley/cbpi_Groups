@@ -62,7 +62,7 @@ class SensorGroup(SensorPassive):
 	sensor08 = Property.Sensor("Sensor 8", description=sensordesc)
 
 	value_type = Property.Select("Value", options=["Average","Minimum","Maximum"],
-		default_value="Average", description="Select what data to return from the group.")
+		description="Select what data to return from the group.")
 
 	def init(self):
 		self.sensors = []
@@ -89,12 +89,12 @@ class SensorGroup(SensorPassive):
 
 	def read(self):
 		values = [float(cbpi.cache.get("sensors")[sensor].instance.last_value) for sensor in self.sensors]
-		if self.value_type == "Average":
-			temp = sum(values)/len(values)
-		elif self.value_type == "Minimum":
+		if self.value_type == "Minimum":
 			temp = min(values)
 		elif self.value_type == "Maximum":
 			temp = max(values)
+		else:
+			temp = sum(values)/len(values)
 		self.data_received(round(temp, 2))
 
 	def get_unit(self):
